@@ -20,8 +20,6 @@ export default function Login() {
     );
   };
 
-  // console.log(isFetching);
-
   return (
     <div className="login">
       <div className="loginWrapper">
