@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 export default function Login() {
   const email = useRef();
   const password = useRef();
-  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+  const { isFetching, dispatch } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,8 +19,6 @@ export default function Login() {
       dispatch
     );
   };
-
-  // console.log(isFetching);
 
   return (
     <div className="login">
