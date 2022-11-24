@@ -6,9 +6,10 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import NoAvatarImg from "../../assets/person/noAvatar.png"
 
 export default function Topbar() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const { user } = useContext(AuthContext);
 
   return (
@@ -57,7 +58,7 @@ export default function Topbar() {
               src={
                 user.profilePicture
                   ? user.profilePicture
-                  : PF + "person/noAvatar.png"
+                  : NoAvatarImg
               }
               alt=""
               className="topbarImg"

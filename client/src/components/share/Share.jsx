@@ -7,8 +7,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { useState, useRef } from "react";
 import axios from "axios";
+import NoAvatarImg from "../../assets/person/noAvatar.png"
 
-const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
 
 export default function Share() {
   const { user } = useContext(AuthContext);
@@ -54,7 +55,7 @@ export default function Share() {
         <div className="shareTop">
           <img
             className="shareProfileImg"
-            src={user.profilePicture || PF + "person/noAvatar.png"}
+            src={user.profilePicture || NoAvatarImg}
             alt=""
           />
           <input

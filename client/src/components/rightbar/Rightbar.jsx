@@ -9,14 +9,16 @@ import axios from "axios";
 import Add from "@mui/icons-material/Add";
 import Remove from "@mui/icons-material/Remove";
 import { useState } from "react";
+import birthdayImg from "../../assets/gift.png"
+
 
 export default function Rightbar({ user }) {
   const HomeRightbar = () => {
-    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
     return (
       <>
         <div className="birthdayContainer">
-          <img className="birthdayImg" src={PF + "gift.png"} alt="" />
+          <img className="birthdayImg" src={birthdayImg} alt="" />
           <span className="birthdayText">
             <b>Kurubaran Ram </b>and <b>60 other friends </b> have a birthday
             today.
@@ -37,7 +39,7 @@ export default function Rightbar({ user }) {
     
     const { user: currentUser, dispatch } = useContext(AuthContext);
     const [followed,setFollowed] = useState(currentUser.following.includes(user?._id))
-    console.log(followed);
+    
     const followHandler = async (e) => {
       e.preventDefault();
     
