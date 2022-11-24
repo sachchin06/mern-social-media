@@ -1,8 +1,8 @@
 import './ad.css'
-const PF = process.env.REACT_APP_PUBLIC_FOLDER
+import AddImg from "../../assets/ad.png"
 
 export default function Ad() {
   return (
-    <img className='rightbarAd' src={PF+"ad.png"} alt="" />
+    <img className='rightbarAd' src={AddImg} alt="" />
   )
 }

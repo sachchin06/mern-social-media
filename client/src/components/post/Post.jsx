@@ -6,13 +6,15 @@ import moment from "moment";
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import {AuthContext} from "../../context/AuthContext"
+import NoAvatarImg from "../../assets/person/noAvatar.png"
+import HeartImg from "../../assets/heart.png"
+import LikeImg from "../../assets/like.png"
 
 export default function Post({ post }) {
   
   const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER
   const {user: currentUser} = useContext(AuthContext)
 
   useEffect(()=>{
@@ -48,7 +50,7 @@ export default function Post({ post }) {
               <NavLink to={`/profile/${user.username}`}>
                 <img
                   className="postProfileImg"
-                  src={user.profilePicture || PF+ "person/noAvatar.png"}
+                  src={user.profilePicture || NoAvatarImg}
                   alt=""
                 />
               </NavLink>
@@ -72,13 +74,13 @@ export default function Post({ post }) {
             <img
               onClick={LikeHandler}
               className="likeIcon"
-              src={PF+"like.png"}
+              src={LikeImg}
               alt=""
             />
             <img
               onClick={LikeHandler}
               className="likeIcon"
-              src={PF + "heart.png"}
+              src={HeartImg}
               alt=""
             />
             <span className="postLikeCounter">{like} people like it</span>
